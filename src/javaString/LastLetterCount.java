@@ -1,37 +1,34 @@
 package javaString;
 public class LastLetterCount {
-
-	
-		// TODO Auto-generated method stub
-
-		static boolean isConsonant(char ch) 
-	    { 
-	        // To handle lower case 
-	        ch = Character.toUpperCase(ch); 
-	       
-	        return !(ch == 'A' || ch == 'E' ||  
-	                ch == 'I' || ch == 'O' ||  
-	                ch == 'U') && ch >= 65 && ch <= 90; 
-	    } 
-	   
-	    static int totalConsonants(String str) 
-	    { 
-	        int count = 0; 
-	        for (int i = 0; i < str.length(); i++)  
-	       
-	            // To check is character is Consonant 
-	            if (isConsonant(str.charAt(i))) 
-	                ++count; 
-	        return count; 
-	    } 
-	      
-	    // Driver code 
-	    public static void main(String args[]) 
-	    { 
-	        String str = "abc de"; 
-	        System.out.println( totalConsonants(str)); 
-	    } 
-
-		
+public static void main(String args[])
+    {
+        String str = "many words";
+        String suff = "y";
+        String suff1="s";
+        String word1=null;
+        String word2=null;
+ 
+        // Extract words from the sentence
+        String words[] = str.split(" ");
+ 
+        // For every word
+        for (int i = 0; i < words.length; i++) {
+ 
+            // If it ends with the given suffix
+            if (words[i].endsWith(suff))
+            {
+            	word1=words[i];
+            }
+            if (words[i].endsWith(suff1))
+            {
+            	word2=words[i];
+            }
+        }
+ 
+       
+        System.out.println("swapped string: "+word2+" "+word1);
+       
+        
+    }
 
 	}
